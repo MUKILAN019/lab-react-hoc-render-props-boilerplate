@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
+import HigherOrderComponent from './HigherOrderComponent'
 
-export default function LikePost() {
+function LikePost(props) {
+  console.log(props)
+ 
 
-  const [likePostCounter, setPostCounter] = useState(0);
 
-  const handlePostCount = ()=>{
-    setPostCounter(likePostCounter+1);
-  }
 
   return (
     <div>
-      <button onClick={handlePostCount}>Like Post {likePostCounter}</button>
+      <button onClick={props.handleClick}>Like Post {props.state}</button>
     </div>
   )
 }
+let componentCall=HigherOrderComponent(LikePost);
+export default componentCall;

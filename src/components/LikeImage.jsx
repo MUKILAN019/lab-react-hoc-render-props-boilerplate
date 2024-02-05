@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
+import HigherOrderComponent from './HigherOrderComponent'
+ function LikeImage(props) {
+  console.log(props)
 
-export default function LikeImage() {
-
-  const [likeImageCounter, setLikeImageCounter] = useState(0);
-
-  const handleLikeImageCount = ()=>{
-    setLikeImageCounter(likeImageCounter+1);
-  }
+ 
 
   return (
     <div>
-      <button onClick={handleLikeImageCount}>Like Image {likeImageCounter}</button>
+      <button onClick={props.handleClick}>Like Image {props.state}</button>
     </div>
   )
 }
+let componentCall=HigherOrderComponent(LikeImage);
+export default componentCall;
