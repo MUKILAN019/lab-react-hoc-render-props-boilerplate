@@ -1,16 +1,25 @@
-import { useState } from 'react';
 import './App.css';
-import LikeImage from './components/LikeImage';
-import LikePost from './components/LikePost';
+import CompCall from './components/LikeImage';
+import ComponentCall from './components/LikePost';
+import Counter from './components/Counter';
+import LikePost1 from './components/Likepost1';
+import Likeimage1 from './components/Likeimage1';
 
 function App() {
-  // const [count,setcount]=useState(0);
   return (
     <div>
       <h3>Some Blog</h3>
       <div className='buttons'>
-        <LikePost />
-        <LikeImage/>
+        <CompCall/>
+        <ComponentCall/>
+
+<Counter render={({count,changeHandle})=>(
+        <LikePost1 count={count} handleclick={changeHandle}/>)}/>       
+  {/* Using render props */}
+      <Counter render={({count,changeHandle})=>(
+        <Likeimage1 count={count} handleclick={changeHandle}/>)}/>
+  {/* Using render props */}
+
       </div>
     </div>
   );

@@ -1,17 +1,14 @@
 import React, { useState } from 'react'
-import HigherOrderComponent from './HigherOrderComponent'
+import WrappedComponent from '../NewComponents/Wrappedcomponent';
 
 function LikePost(props) {
-  console.log(props)
- 
-
-
 
   return (
     <div>
-      <button onClick={props.handleClick}>Like Post {props.state}</button>
+      <button onClick={props.handleChange}>Like Post {props.state}</button>
     </div>
   )
 }
-let componentCall=HigherOrderComponent(LikePost);
-export default componentCall;
+
+let ComponentCall = WrappedComponent(LikePost)
+export default ComponentCall;
